@@ -7,7 +7,7 @@ st.title("🏠 Página Inicial")
 st.write("Bem-vindo!")
 
 if st.button("Ir para Página 1"):
-    st.query_params["page"] = "pages/pagina1"
+    st.query_params["page"] = "pages/1_Perfis_de_Clientes"
 
 
 # A configuração da página é a primeira coisa a ser executada

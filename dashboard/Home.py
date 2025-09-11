@@ -1,10 +1,14 @@
 import streamlit as st
 
+st.set_page_config(page_title="Home", page_icon="🏠")
 
-st.set_page_config(page_title="Página 1", page_icon="📄")
+st.title("🏠 Página Inicial")
 
-st.title("📄 Página 1")
-st.write("Você chegou na Página 1!")
+st.write("Bem-vindo!")
+
+if st.button("Ir para Página 1"):
+    st.query_params["page"] = "pages/pagina1"
+
 
 # A configuração da página é a primeira coisa a ser executada
 st.set_page_config(

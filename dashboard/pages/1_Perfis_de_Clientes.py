@@ -6,10 +6,10 @@ from plotly.subplots import make_subplots
 import gdown  # <-- CORRIGIDO
 import os     # <-- CORRIGIDO
 
-st.set_page_config(page_title="Perfil de Clientes", page_icon="📄")
+st.set_page_config(page_title="Página 1", page_icon="📄")
 
-st.title("📄 Perfil de Clientes")
-st.write("Você chegou na Perfil de Clientes")
+st.title("📄 Página 1")
+st.write("Você chegou na Página 1!")
 
 
 st.set_page_config(

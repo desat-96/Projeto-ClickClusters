@@ -1,5 +1,11 @@
 import streamlit as st
 
+
+st.set_page_config(page_title="Página 1", page_icon="📄")
+
+st.title("📄 Página 1")
+st.write("Você chegou na Página 1!")
+
 # A configuração da página é a primeira coisa a ser executada
 st.set_page_config(
     page_title="ClickClusters",

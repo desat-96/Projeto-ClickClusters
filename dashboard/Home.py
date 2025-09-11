@@ -58,7 +58,7 @@ with col_text:
     )
 with col_image:
     try:
-        st.image("Clickclusters_logo.png", use_container_width=True)
+        st.image("dashboard/Clickclusters_logo.png", use_container_width=True)
     except FileNotFoundError:
         st.warning("Imagem 'Clickclusters_logo.png' não encontrada.")
         st.write("*(Placeholder para Imagem Ilustrativa de Mapa/Conexões)*")
@@ -75,12 +75,12 @@ with footer_col1:
     
 with footer_col2:
     try:
-        st.image("fiap_logo.png", width=100)
+        st.image("dashboard/fiap_logo.png", width=100)
     except FileNotFoundError:
-        st.warning("Logo 'fiap_logo.png' não encontrada.")
+        st.warning("Logo 'dashboard/fiap_logo.png' não encontrada.")
 
 with footer_col3:
     try:
-        st.image("marca_clickbus.png", width=100)
+        st.image("dashboard/marca_clickbus.png", width=100)
     except FileNotFoundError:
-        st.warning("Logo 'marca_clickbus.png' não encontrada.")
+        st.warning("Logo 'dashboard/marca_clickbus.png' não encontrada.")

@@ -6,6 +6,7 @@ from plotly.subplots import make_subplots
 import joblib 
 import gdown  # <-- MUDANÇA AQUI
 import os
+import glob
 
 # st.set_page_config(page_title="Home", page_icon="🏠")
 

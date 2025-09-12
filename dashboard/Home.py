@@ -174,7 +174,8 @@ if df_final_app is not None:
         lista_anos,
         default=None
     )
-
+    limiar_probabilidade = st.sidebar.slider('Limiar de Probabilidade de Compra:', min_value=0, max_value=100, value=70, format='%d%%')
+    
     # --- LÓGICA DE FILTRAGEM ---
     df_filtrado = df_final_app.copy()
     if anos_selecionados:
@@ -407,13 +408,13 @@ if df_final_app is not None:
     st.write("---")
 
     # --- BARRA LATERAL (SIDEBAR) COM FILTROS ---
-    st.sidebar.header("Filtros de Análise")
+    # st.sidebar.header("Filtros de Análise")
     
-    lista_anos = sorted(df_final_app['Ano'].unique().tolist(), reverse=True)
-    anos_selecionados = st.sidebar.multiselect('Selecione um ou mais Anos:', lista_anos, default=None)
-    lista_segmentos = df_final_app['Tipo de Seguimento'].unique().tolist()
-    segmentos_selecionados = st.sidebar.multiselect('Selecione um ou mais Segmentos:', lista_segmentos, default=None)
-    limiar_probabilidade = st.sidebar.slider('Limiar de Probabilidade de Compra:', min_value=0, max_value=100, value=70, format='%d%%')
+    # lista_anos = sorted(df_final_app['Ano'].unique().tolist(), reverse=True)
+    # anos_selecionados = st.sidebar.multiselect('Selecione um ou mais Anos:', lista_anos, default=None)
+    # lista_segmentos = df_final_app['Tipo de Seguimento'].unique().tolist()
+    # segmentos_selecionados = st.sidebar.multiselect('Selecione um ou mais Segmentos:', lista_segmentos, default=None)
+
 
     # --- LÓGICA DE FILTRAGEM ---
     df_filtrado = df_final_app.copy()

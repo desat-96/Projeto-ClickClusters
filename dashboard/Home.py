@@ -399,7 +399,6 @@ def carregar_dados():
         st.error(f"Erro fatal ao carregar os dados. Verifique o ID do arquivo ou a conexão. Detalhe: {e}")
         return None
 
-df_final_app = carregar_dados()
 
 # --- TÍTULO E INTRODUÇÃO ---
 if df_final_app is not None:

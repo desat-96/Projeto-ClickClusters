@@ -110,16 +110,16 @@ with footer_col3:
 #===========================================
 # Pagina 1 
 
-st.set_page_config(page_title="Página 1", page_icon="📄")
+# st.set_page_config(page_title="Página 1", page_icon="📄")
 
-st.title("📄 Página 1")
-st.write("Você chegou na Página 1!")
+# st.title("📄 Página 1")
+# st.write("Você chegou na Página 1!")
 
 
-st.set_page_config(
-    page_title="ClickClusters - Perfil de Clientes",
-    layout="wide"
-)
+# st.set_page_config(
+#     page_title="ClickClusters - Perfil de Clientes",
+#     layout="wide"
+# )
 
 # --- PALETA DE CORES DOS SEGMENTOS ---
 PALETA_CORES = {
@@ -175,7 +175,7 @@ if df_final_app is not None:
         default=None
     )
     limiar_probabilidade = st.sidebar.slider('Limiar de Probabilidade de Compra:', min_value=0, max_value=100, value=70, format='%d%%')
-    
+
     # --- LÓGICA DE FILTRAGEM ---
     df_filtrado = df_final_app.copy()
     if anos_selecionados:

@@ -134,16 +134,9 @@ COR_NEUTRA = '#517CED'
 @st.cache_data
 def carregar_dados():
     try:
-        # ID do arquivo no Google Drive extraído do seu link
-        file_id = '1K8JZOaYL9wwbSlsiaq-J8m4KSQmwjQI9'
-        output_path = 'dash_final_prod.parquet' # Nome do arquivo a ser salvo
-
-        # Verifica se o arquivo já foi baixado para não baixar de novo
-        if not os.path.exists(output_path):
-            st.warning(f"Baixando o arquivo de dados ({output_path}) do Google Drive. Isso pode levar um momento...")
-            gdown.download(id=file_id, output=output_path, quiet=False)
+        arquivos= glob.glob('data/*.parquet')
         
-        df = pd.read_parquet(output_path)
+        df = pd.concat([pd.read_parquet(arquivo) for arquivo in arquivos], ignore_index=True)
         
         df['date_purchase'] = pd.to_datetime(df['date_purchase'])
         if 'Ano' not in df.columns:
@@ -391,16 +384,9 @@ COR_NEUTRA = '#517CED'
 @st.cache_data
 def carregar_dados():
     try:
-        # ID do arquivo no Google Drive extraído do seu link
-        file_id = '1K8JZOaYL9wwbSlsiaq-J8m4KSQmwjQI9'
-        output_path = 'dash_final_prod.parquet' # Nome do arquivo a ser salvo
-
-        # Verifica se o arquivo já foi baixado para não baixar de novo
-        if not os.path.exists(output_path):
-            st.warning(f"Baixando o arquivo de dados ({output_path}) do Google Drive. Isso pode levar um momento...")
-            gdown.download(id=file_id, output=output_path, quiet=False)
+        arquivos= glob.glob('data/*.parquet')
         
-        df = pd.read_parquet(output_path)
+        df = pd.concat([pd.read_parquet(arquivo) for arquivo in arquivos], ignore_index=True)
         
         df['date_purchase'] = pd.to_datetime(df['date_purchase'])
         if 'Ano' not in df.columns:

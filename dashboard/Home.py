@@ -7,7 +7,7 @@ st.title("🏠 Página Inicial")
 st.write("Bem-vindo!")
 
 if st.button("Ir para Página 1"):
-    st.sweet_page ("pages/1_Perfis_de_Clientes.py")
+    st.switch_page ("pages/1_Perfis_de_Clientes.py")
     
 
 

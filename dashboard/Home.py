@@ -219,16 +219,17 @@ if df_final_app is not None:
 
     with st.expander("Clique aqui para ver a descrição detalhada de cada segmento"):
         st.markdown("""
-        * **<span style='color:#E86800; font-weight:bold;'>Super Compradores:</span>** A elite dos clientes. Representam o menor grupo (0.53%), mas com o maior poder de compra e a maior frequência. São os clientes mais valiosos e leais da plataforma. 
+        * **<span style='color:#E86800; font-weight:bold;'>Super Compradores:</span>** A elite dos clientes. Representam o menor grupo (0.85%), mas com o maior poder de compra e a maior frequência. São os clientes mais valiosos e leais da plataforma. 
         
-        * **<span style='color:#9400F7; font-weight:bold;'>Viajantes Inativos:</span>** Representam 30.11% da base, mas são clientes que não realizam uma compra há quase 6 anos em média. Para fins práticos, são considerados clientes perdidos, e o foco para eles seria em campanhas de "win-back" de alto impacto.
+        * **<span style='color:#9400F7; font-weight:bold;'>Viajantes Inativos:</span>** Representam 27.44% da base, mas são clientes que não realizam uma compra há quase 6 anos em média. Para fins práticos, são considerados clientes perdidos, e o foco para eles seria em campanhas de "win-back" de alto impacto.
         
-        * **<span style='color:#EBBC00; font-weight:bold;'>Viajantes Ocasionais:</span>** O maior segmento da base de clientes. São usuários que compram de forma esporádica (frequência de 1.77) e não interagem com a plataforma há um tempo considerável (recência de 572 dias). O principal objetivo para este grupo é reengajamento.
+        * **<span style='color:#EBBC00; font-weight:bold;'>Viajantes Ocasionais:</span>** O maior segmento da base de clientes. São usuários que compram de forma esporádica (frequência de 2.02) e não interagem com a plataforma há um tempo considerável (recência de 561 dias). O principal objetivo para este grupo é reengajamento.
         
-        * **<span style='color:#D4A3FF; font-weight:bold;'>Viajantes Promissores:</span>** Um grupo valioso (11.38%) com forte potencial de crescimento. Compram com boa frequência e possuem um gasto significativo. São a base para futuras campanhas de fidelização com o objetivo de elevá-los ao status de Viajantes Frequentes.
+        * **<span style='color:#D4A3FF; font-weight:bold;'>Viajantes Promissores:</span>** Um grupo valioso (16.13%) com forte potencial de crescimento. Compram com boa frequência e possuem um gasto significativo. São a base para futuras campanhas de fidelização com o objetivo de elevá-los ao status de Viajantes Frequentes.
         
         * **<span style='color:#00005C; font-weight:bold;'>Viajantes Frequentes:</span>** O núcleo de clientes mais engajados após os Super Compradores. Compram com alta frequência (21 vezes em média) e são recentes, representando uma base fiel e de alto valor que interage constantemente com a plataforma.
         """, unsafe_allow_html=True)
+
 
     st.subheader("Tabela Comparativa de Segmentos")
 
@@ -382,23 +383,23 @@ PALETA_CORES = {
 }
 COR_NEUTRA = '#517CED'
 
-# --- FUNÇÃO PARA CARREGAR OS DADOS (VERSÃO FINAL COM GDOWN) ---
-@st.cache_data
-def carregar_dados():
-    try:
-        arquivos= glob.glob('data/*.parquet')
+# # --- FUNÇÃO PARA CARREGAR OS DADOS (VERSÃO FINAL COM GDOWN) ---
+# @st.cache_data
+# def carregar_dados():
+#     try:
+#         arquivos= glob.glob('data/*.parquet')
         
-        df = pd.concat([pd.read_parquet(arquivo) for arquivo in arquivos], ignore_index=True)
+#         df = pd.concat([pd.read_parquet(arquivo) for arquivo in arquivos], ignore_index=True)
         
-        df['date_purchase'] = pd.to_datetime(df['date_purchase'])
-        if 'Ano' not in df.columns:
-            df['Ano'] = df['date_purchase'].dt.year
+#         df['date_purchase'] = pd.to_datetime(df['date_purchase'])
+#         if 'Ano' not in df.columns:
+#             df['Ano'] = df['date_purchase'].dt.year
             
-        return df
+#         return df
         
-    except Exception as e:
-        st.error(f"Erro fatal ao carregar os dados. Verifique o ID do arquivo ou a conexão. Detalhe: {e}")
-        return None
+#     except Exception as e:
+#         st.error(f"Erro fatal ao carregar os dados. Verifique o ID do arquivo ou a conexão. Detalhe: {e}")
+#         return None
 
 
 # --- TÍTULO E INTRODUÇÃO ---
